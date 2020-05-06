@@ -1,6 +1,16 @@
 # NYC Coronavirus (COVID-19) data
-This repository contains data on coronavirus (COVID-19) in New York City (NYC), updated daily. Data are assembled by the NYC Department of Health and Mental Hygiene (DOHMH) Incident Command System for COVID-19 Response (Surveillance and Epidemiology Branch in collaboration with Public Information Office Branch). You can view these data on [the Department of Health's website](https://www1.nyc.gov/site/doh/covid/covid-19-data.page). Note that data are  being collected in real-time and are preliminary and subject to change as COVID-19 response continues. 
+This repository contains data on coronavirus (COVID-19) in New York City (NYC), updated daily. Data are assembled by the NYC Department of Health and Mental Hygiene (DOHMH) Incident Command System for COVID-19 Response (Surveillance and Epidemiology Branch in collaboration with Public Information Office Branch). You can view these data on [the Department of Health's website](https://www1.nyc.gov/site/doh/covid/covid-19-data.page). Note that data are  being collected in real-time and are preliminary and subject to change as COVID-19 response continues. Information on this page will change as data and documentation are updated. 
+ 
+Data reported by NYC is derived from the Health Department’s surveillance database and will be different from data reported by the New York State Department of Health. The State Department of Health reports data on deaths from: 
+- The State Hospital Emergency Response Data System 
+- Daily calls to hospitals and other facilities that are caring for patients, such as nursing homes 
 
+The NYC Health Department reports data that reflect both: 
+- Positive tests for COVID-19 confirmed by laboratories 
+- Confirmations of a person’s death from the City’s Office of the Chief Medical Examiner and our Bureau of Vital Statistics, which is responsible for the registration, analysis and reporting of all deaths in the city. 
+Due to the time required by the City to confirm that a death was due to COVID-19, the City’s reported total for any given day is usually lower than the State’s number. 
+
+---
 
 ## Files
 
@@ -17,7 +27,6 @@ This file includes daily counts of new confirmed cases, hospitalizations, and de
 
 Because of delays in reporting, the most recent data may be incomplete. Data shown currently will be updated in the future as new cases, hospitalizations, and deaths are reported.
 
-
 ### boro.csv
 This contains rates of confirmed cases, by NYC borough of residence. Rates are:
 - Cumulative since the start of the outbreak
@@ -30,14 +39,20 @@ This contains age-specific  rates of confirmed cases, hospitalizations, and deat
 ### by-sex.csv
 This contains rates of confirmed cases, hospitalizations, and deaths.
 
-### testing.csv
-This file includes counts of New York City residents with specimens collected for SARS-CoV-2 testing by day, the subsets who tested positive as confirmed COVID-19 cases, were ever hospitalized, and who died, as of the date of extraction from the NYC Health Department's disease surveillance database. For each date of extraction, results for all specimen collection dates are appended to the bottom of the dataset. Lags between specimen collection date and report dates of cases, hospitalizations, and deaths can be assessed by comparing counts for the same specimen collection date across multiple data extract dates.
-
 ### tests-by-zcta.csv
 This file includes the cumulative count of New York City residents by ZIP code of residence who:
 - Were ever tested for COVID-19 (SARS-CoV-2) 
 - Tested positive
 The cumulative counts are as of the date of extraction from the NYC Health Department's disease surveillance database.
+
+### Deaths\probable-confirmed-dod.csv
+This file includes deaths, by date of interest, for both confirmed COVID-19 deaths, and for probable COVID-19 deaths. Only deaths that occurred on or after March 11 are included (March 11 was the first date of death for a confirmed death). 
+- A death is classified as confirmed if the decedent was a New York City resident who had a positive SARS CoV-2 (COVID-19) laboratory test. 
+- A death is classified as probable if the decedent was a New York City resident (NYC resident or residency pending) who had no known positive laboratory test for SARS-CoV-2 (COVID-19) but the death certificate lists as a cause of death “COVID-19” or an equivalent. 
+
+As new information becomes available, some deaths previously classified as probable may be reclassified as laboratory-confirmed.
+
+---
 
 ## Technical Notes
 This section may change as data and documentation are updated.
@@ -51,3 +66,5 @@ At this time, NYC DOHMH does not have the ability to robustly quantify the numbe
 Annual citywide, borough-specific, and demographic specific intercensal population estimates from 2018 were developed by NYC DOHMH on the basis of the US Census Bureau’s Population Estimates Program, as of November 2019. 
 
 Rates of cases at the borough-level were calculated using direct standardization for age at diagnosis and weighting by [the US 2000 standard population](https://www.cdc.gov/nchs/data/statnt/statnt20.pdf). 
+
+---
